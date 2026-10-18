@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Корпоративное обучение под ключ на базе ИИ — Марина Кантор</title>
+<meta name="description" content="Адаптация новых сотрудников, повышение квалификации, оценка персонала, база знаний и ИИ-тренажёры для компаний.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marqline.ru/">
+<meta property="og:title" content="Корпоративное обучение под ключ на базе ИИ">
+<meta property="og:description" content="Адаптация новых сотрудников, повышение квалификации, оценка персонала, база знаний и ИИ-тренажёры для компаний.">
+<meta property="og:image" content="https://marqline.ru/img/og-v2.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* Дизайн-система: сайт_инструменты/ДИЗАЙН-СИСТЕМА.md */
+:root{
+  --text:#1E2A36; --deep:#0E3B5C; --blue:#2E86C1; --sea:#48C9B0; --bg:#EEF7FC; --white:#FFFFFF;
+  --line:#D9E3EC; --line-strong:#C2D0DD; --gray:#5B6472;
+  --blue-light:#5BA3D6; --blue-dark:#1F6A9E; --deep-light:#24557A; --deep-dark:#082A43;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Golos Text',sans-serif;font-size:17px;line-height:1.6;color:var(--text);background:var(--white)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+section{padding:64px 0}
+section[id]{scroll-margin-top:64px}
+.alt{background:var(--bg)}
+h1,h2,h3{font-weight:700;text-transform:uppercase;color:var(--deep);letter-spacing:.01em}
+h1{font-size:40px;line-height:1.15}
+h2{font-size:28px;line-height:1.2;margin-bottom:32px}
+h3{font-size:18px;line-height:1.3;margin-bottom:8px}
+p{max-width:680px}
+p+p{margin-top:16px}
+.cap{font-size:14px;font-style:italic;color:var(--gray)}
+a.link{color:var(--blue);text-underline-offset:3px}
+a.link:hover{color:var(--blue-light)}
+a.link:active{color:var(--blue-dark)}
+
+/* меню */
+nav{position:sticky;top:0;z-index:10;background:var(--white);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.name{font-weight:700;color:var(--deep)}
+.menu{display:flex;gap:4px}
+.menu a{color:var(--text);text-decoration:none;padding:8px 12px;border-radius:8px}
+.menu a:hover{background:var(--bg);color:var(--deep)}
+.menu a:active{background:var(--line-strong)}
+
+/* кнопки */
+.btn{display:inline-block;font:600 17px/1 'Golos Text',sans-serif;padding:16px 28px;border-radius:8px;border:1.5px solid transparent;cursor:pointer;text-decoration:none;transition:background .1s,border-color .1s,color .1s}
+.btn-main{background:var(--deep);color:#fff}
+.btn-main:hover{background:var(--deep-light)}
+.btn-main:active{background:var(--deep-dark)}
+.btn-sec{background:var(--white);color:var(--blue);border-color:var(--blue)}
+.btn-sec:hover{border-color:var(--blue-light);color:var(--blue-light)}
+.btn-sec:active{border-color:var(--blue-dark);color:var(--blue-dark)}
+
+/* первый экран */
+.hero{padding:12px 0}
+.hero .wrap{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.hero h1{margin-bottom:24px}
+.hero img{width:240px;aspect-ratio:4/3;object-fit:cover;object-position:60% 30%;border-radius:16px;display:block}
+.hero + section{padding-top:20px}
+.hero + section h2{margin-bottom:16px}
+
+/* карточки */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column}
+.terms{margin-top:auto !important;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.terms b{color:var(--deep);font-weight:700}
+.after{margin-top:32px;max-width:none}
+.card>.cap{margin-bottom:24px}
+
+/* тренажёр */
+.client{background:var(--bg);border-radius:8px;padding:16px;margin-bottom:16px}
+.opts{display:grid;gap:8px;margin:8px 0 16px}
+.opt{display:block;width:100%;text-align:left;font:400 17px/1.5 'Golos Text',sans-serif;color:var(--text);background:var(--white);border:1.5px solid var(--line);border-radius:8px;padding:12px 16px;cursor:pointer}
+.opt:hover{border-color:var(--blue-light)}
+.opt.sel{border-color:var(--blue-light);background:var(--bg)}
+.opt:active{border-color:var(--blue-dark)}
+.opt.right{border-color:var(--sea);background:var(--white)}
+.opt.wrong{border-color:var(--text);background:var(--white)}
+.fb{display:none;border-radius:8px;padding:16px;border:1.5px solid var(--line);margin-bottom:16px}
+.fb.show{display:block}
+.fb.right{border-color:#2E9E5B}
+.fb.wrong{border-color:#D64545}
+.fb b{color:var(--deep)}
+.row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+
+/* схема */
+.scheme svg{display:block;width:100%;height:auto;margin:auto 0}
+
+/* комикс: персонажи — копия эталона 01_Портреты_знакомство.html, цвета эталона */
+.comic{--blue:#2F57E1;--blue-dark:#284466;--orange:#FF632F;--ink:#212020;--bg-card-alt:#EDF6FF;--skin:#F0C29B;--skin-shade:#DFA679;--grey-hair:#C7CCD6;display:flex;flex-direction:column;gap:16px}
+.comic-panel{display:flex;gap:12px;align-items:flex-start}
+.comic-panel--reply{flex-direction:row-reverse}
+.comic-panel--reply .comic-text{text-align:right}
+.comic-avatar{flex:0 0 56px;width:56px;height:56px;border-radius:50%;overflow:hidden}
+.comic-avatar svg{width:100%;height:100%;display:block}
+.comic-name{font-size:14px;font-weight:600;color:var(--deep);margin-bottom:4px}
+.comic-bubble{display:inline-block;text-align:left;background:var(--bg);border-radius:12px;padding:12px 16px}
+.scene-note{font-size:14px;font-style:italic;color:var(--gray);text-align:center}
+
+.card>.terms{margin-top:auto}
+.card>:has(+.terms){margin-bottom:16px}
+/* стоимость */
+.price-text{max-width:680px}
+.price-text .list{margin:8px 0 16px}
+.price-notes{margin-top:32px;padding-top:32px;border-top:1px solid var(--line);display:grid;gap:16px}
+.note{display:flex;gap:16px;align-items:flex-start}
+.note svg{flex:0 0 24px;width:24px;height:24px;margin-top:2px;fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.note p{margin:0}
+
+/* примеры: компактнее, чтобы оба примера помещались на один экран */
+#examples{padding-top:24px}
+#examples h2{margin-bottom:12px}
+#examples>.wrap>.grid2:first-of-type{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.ex-more{margin-top:48px}
+#examples .card{padding:16px 20px}
+#examples .card>.cap{margin-bottom:12px}
+#examples .client{padding:10px 14px;margin-bottom:8px}
+#examples .opts{gap:6px;margin:6px 0 10px}
+#examples .opt{padding:8px 14px;line-height:1.4}
+#examples .fb{padding:10px 14px;margin-bottom:10px;line-height:1.45}
+#examples .row .btn{padding:12px 22px}
+#examples .comic{gap:10px}
+#examples .comic-avatar{flex-basis:48px;width:48px;height:48px}
+#examples .comic-bubble{padding:8px 14px;line-height:1.45}
+#examples .comic-name{margin-bottom:2px}
+
+/* списки с шевроном */
+.list{list-style:none;margin:4px 0;line-height:1.5}
+.list li{position:relative;padding-left:24px;margin-bottom:4px}
+.list li::before{content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;border-right:2px solid var(--sea);border-top:2px solid var(--sea);transform:rotate(45deg)}
+.list+p{margin-top:4px}
+#directions .card h3{margin-bottom:4px}
+#directions .card{padding:16px 24px}
+#directions .terms{padding-top:8px}
+
+/* персонажи в услугах: аватары — копия эталона 01_Портреты_знакомство.html */
+.chars-title{margin-top:48px}
+.chars{--blue:#2F57E1;--blue-dark:#284466;--orange:#FF632F;--ink:#212020;--bg-card-alt:#EDF6FF;--skin:#F0C29B;--skin-shade:#DFA679;--grey-hair:#C7CCD6;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.char{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px;display:grid;grid-template-rows:subgrid;grid-row:span 3;row-gap:16px}
+.char-head{display:flex;gap:16px;align-items:flex-start}
+.char-ava{flex:0 0 64px;width:64px;height:64px;border-radius:50%;overflow:hidden}
+.char-ava svg{width:100%;height:100%;display:block}
+.char h3{margin:8px 0 0}
+.char-quote{align-self:start;background:var(--bg);border-radius:12px;padding:12px 16px;font-style:italic}
+
+.mob-only{display:none!important}
+@media(max-width:860px){
+  .mob-only{display:block!important}
+  .desk-only{display:none!important}
+  nav .wrap{flex-direction:column;align-items:stretch;height:auto;padding-top:8px;padding-bottom:4px;gap:0}
+  .menu{display:flex;overflow-x:auto;white-space:nowrap;scrollbar-width:none;margin:0 -12px}
+  .menu::-webkit-scrollbar{display:none}
+  .menu a{padding:8px 12px}
+  section[id]{scroll-margin-top:96px}
+  .scheme:not(.wide){overflow-x:auto}
+  .scheme:not(.wide) svg{min-width:440px}
+  .hero h1{margin-bottom:16px}
+}
+/* кнопка наверх */
+.to-top{position:fixed;right:24px;bottom:24px;z-index:20;width:48px;height:48px;border-radius:50%;border:0;background:var(--deep);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,visibility .2s,transform .2s,background .1s}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:var(--deep-light)}
+.to-top:active{background:var(--deep-dark)}
+.to-top svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:860px){.to-top{right:16px;bottom:16px;width:44px;height:44px}}
+
+/* отчёт */
+.wide{grid-column:1 / -1}
+.rep-grid{display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,1.1fr) minmax(0,1.1fr);gap:32px;align-items:start}
+.rep-grid .kpis{grid-template-columns:1fr;margin:0}
+.rep-grid .rep-sub{margin-top:0}
+@media(max-width:860px){.rep-grid{grid-template-columns:1fr;gap:16px}.wide svg{min-width:0}}
+
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:16px}
+.kpi{background:var(--bg);border-radius:8px;padding:12px}
+.kpi b{display:block;font-size:18px;font-weight:700;color:var(--deep);line-height:1.3;white-space:nowrap}
+.kpi span{display:block;font-size:14px;font-style:italic;color:var(--gray);line-height:1.35;margin-top:4px}
+.rep-sub{font-weight:600;color:var(--deep);margin:8px 0 4px}
+.gaps{display:grid;gap:6px;margin-bottom:8px}
+.gap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:4px 0;border-bottom:1px solid var(--line)}
+.gap .bar{display:none}
+.gap b{white-space:nowrap}
+.gap b{font-weight:600;color:var(--deep);text-align:right}
+.bar{height:6px;background:var(--bg);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--blue)}
+
+/* образование */
+#education h3{margin-bottom:16px}
+.exp{margin-bottom:32px}
+.edu{list-style:none}
+.edu li{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.edu li:first-child{padding-top:0}
+.edu .yr{color:var(--deep);font-weight:700}
+.edu b{font-weight:600}
+
+/* контакты */
+.contacts{background:var(--deep);color:#fff}
+.contacts h2{color:#fff}
+.clist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:32px}
+.clist a{display:block;color:#fff;text-decoration:none;border:1.5px solid var(--deep-light);border-radius:8px;padding:16px 20px;transition:background .1s}
+.clist a:hover{background:var(--deep-light)}
+.clist a:active{background:var(--deep-dark)}
+.clist span{display:block;font-size:14px;font-style:italic;color:#B4C6D6;margin-bottom:4px}
+.clist b{font-weight:600}
+.contacts p{color:#D4E1EC;max-width:none}
+
+@media(max-width:860px){
+  h1{font-size:28px} h2{font-size:22px;margin-bottom:24px}
+  section{padding:48px 0}
+  .grid2,.clist,.chars{grid-template-columns:1fr}
+  .hero .wrap{grid-template-columns:1fr;gap:24px}
+  .hero img{width:100%;max-width:420px}
+  .edu li{grid-template-columns:56px 1fr;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <span class="name">Марина Кантор</span>
+  <div class="menu">
+    <a href="#directions">Направления</a><a href="#price">Стоимость</a><a href="#examples">Примеры работ</a><a href="#education">Опыт и образование</a><a href="#contacts">Контакты</a>
+  </div>
+</div></nav>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <h1>Корпоративное обучение под ключ</h1>
+    <a class="btn btn-main" href="#contacts">Связаться</a>
+  </div>
+  <img src="img/marina.webp" alt="Марина Кантор, методолог корпоративного обучения">
+</div></section>
+
+<section class="alt" id="directions"><div class="wrap">
+  <h2>Направления работы</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>Адаптация новых сотрудников</h3>
+      <p>Выстраиваю маршрут первых недель: что новичок изучает, что отрабатывает на практике и как проходит аттестацию в конце.</p>
+      <ul class="list"><li>Курсы по продукту и процессам</li><li>Стажировка с наставником</li><li>Отчёт для руководителя о том, кто как продвигается</li></ul>
+      <div class="terms"><b>от 100 000 ₽</b><span class="cap">4–8 недель</span></div>
+    </div>
+    <div class="card">
+      <h3>Повышение квалификации</h3>
+      <p>Курсы для действующих сотрудников:</p>
+      <ul class="list"><li>Техника продаж</li><li>Продукт</li><li>Управление для руководителей</li></ul>
+      <p>Каждый курс начинается с замера знаний и заканчивается им же, поэтому эффективность курса сразу видна в цифрах.</p>
+      <div class="terms"><b>от 60 000 ₽ за курс</b><span class="cap">3–6 недель</span></div>
+    </div>
+    <div class="card">
+      <h3>Оцифровка знаний компании</h3>
+      <ul class="list"><li>Собираю в единую базу то, что сейчас хранится в головах сотрудников, чатах и папках</li><li>Назначаю владельцев разделов и правила обновления</li><li>Подбираю платформу из реестра российского ПО и подключаю ИИ-помощника, который отвечает сотрудникам по базе со ссылкой на источник</li></ul>
+      <div class="terms"><b>от 50 000 ₽ в месяц</b><span class="cap">3–6 месяцев</span></div>
+    </div>
+    <div class="card">
+      <h3>Оценка и аттестация</h3>
+      <ul class="list"><li>Разрабатываю модель компетенций и поведенческие шкалы под ваши должности, тесты и практические задания для аттестации</li><li>Провожу Talent Review и настраиваю регулярную переаттестацию</li><li>Даю руководителю цифровой профиль каждого сотрудника: знания и навыки до и после обучения в одном отчёте</li></ul>
+      <div class="terms"><b>от 80 000 ₽</b><span class="cap">4–6 недель</span></div>
+    </div>
+    <div class="card">
+      <h3>Система обучения под ключ</h3>
+      <p>Корпоративный университет целиком:</p>
+      <ul class="list"><li>Уровни обучения от адаптации до руководителей</li><li>Портал с личными кабинетами и баллами</li><li>Отчёты для руководства</li><li>Связка с CRM</li></ul>
+      <div class="terms"><b>от 100 000 ₽ в месяц</b><span class="cap">от 3 месяцев</span></div>
+    </div>
+    <div class="card">
+      <h3>ИИ-инструменты для обучения</h3>
+      <ul class="list"><li>Тренажёры, где сотрудник отрабатывает разговор с виртуальным клиентом</li><li>Разбор реальных звонков, кейсов и презентаций с обратной связью</li><li>Автоматическая проверка тестов и практических работ</li></ul>
+      <div class="terms"><b>от 40 000 ₽</b><span class="cap">2–4 недели</span></div>
+    </div>
+    <div class="card">
+      <h3>Геймификация и сюжетное обучение</h3>
+      <ul class="list"><li>Превращаю курс в историю: сквозные персонажи проживают рабочие ситуации, и ученик видит свои ошибки со стороны, без стыда</li><li>Ввожу игровые механики, которые держат интерес: баллы и уровни, рейтинги, соревнования и олимпиады между отделами, внутренняя валюта, которую можно обменять на призы</li></ul>
+      <div class="terms"><b>от 50 000 ₽</b><span class="cap">3–5 недель</span></div>
+    </div>
+    <div class="card">
+      <h3>Курсы на подряд и аудит</h3>
+      <ul class="list"><li>Отдельные курсы и материалы на подряд для студий и экспертов</li><li>Аудит существующего обучения</li></ul>
+      <div class="terms"><b>от 5 000 ₽</b><span class="cap">срок по задаче</span></div>
+    </div>
+  </div>
+
+</div></section>
+
+<section id="price"><div class="wrap">
+  <h2>Стоимость</h2>
+  <div class="price-text">
+    <p>Итоговая стоимость проекта зависит от пяти вещей:</p>
+    <ul class="list">
+      <li>Нужно ли выстроить всю систему корпоративного обучения или я работаю в рамках существующей</li>
+      <li>Сколько курсов нужно создать</li>
+      <li>Есть ли у компании готовые материалы и эксперты</li>
+      <li>Нужна ли платформа для обучения</li>
+      <li>На сколько сотрудников рассчитано обучение</li>
+    </ul>
+    <p>В стоимость входят методология, тексты, схемы, тесты и тренажёры, сборка курса и замер результата. Оплата идёт по этапам: вы платите за принятый результат, а не авансом за весь проект.</p>
+    <div class="price-notes">
+      <div class="note">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 17V7h3.5a2.75 2.75 0 0 1 0 5.5H8.5M8.5 14.5h5"/></svg>
+        <p>Штатный специалист по обучению стоит компании от 1,2 млн ₽ в год вместе с налогами. Проект оплачивается один раз, а курсы, тесты и отчёты остаются у вас и работают дальше.</p>
+      </div>
+      <div class="note">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 7v6"/><path d="M12 16.5v.5"/></svg>
+        <p>Чтобы оценить мою работу заранее, закажите пробный урок по вашему продукту за 5 000 ₽.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="alt" id="examples"><div class="wrap">
+  <h2>Примеры работ</h2>
+  <div class="grid2">
+
+    <div class="card">
+      <h3>Демо-урок с тренажёром</h3>
+      <p class="cap">Выберите ответ менеджера и получите разбор.</p>
+      <div class="client">Клиент: «Пришлите предложение, мы подумаем».</div>
+      <div class="opts">
+        <button class="opt" data-ok="0" data-fb="Предложение уйдёт в почту и потеряется среди других. Менеджер так и не узнал, что важно клиенту и кто принимает решение.">Отправить предложение и перезвонить через неделю</button>
+        <button class="opt" data-ok="1" data-fb="Так менеджер узнаёт, по каким критериям будут сравнивать предложения и кто решает. Предложение составляется под эти критерии, а не наугад.">Уточнить критерии выбора и кто принимает решение</button>
+        <button class="opt" data-ok="0" data-fb="Скидка до того, как клиент назвал свои критерии, — это потеря денег без гарантии сделки.">Сразу дать скидку, чтобы опередить конкурентов</button>
+      </div>
+      <div class="fb" id="fb"></div>
+      <div class="row"><button class="btn btn-main" id="check">Проверить</button><button class="btn btn-sec" id="again">Заново</button></div>
+    </div>
+
+    <div class="card">
+      <h3>Фрагмент курса</h3>
+      <p class="cap">Сложный продукт — через сюжет с персонажами.</p>
+      <div class="comic">
+        <div class="comic-panel">
+          <div class="comic-avatar"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
+            <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--blue)"/>
+            <path d="M40 62 L42 76 L50 68 L58 76 L60 62 Z" fill="var(--orange)"/>
+            <circle cx="50" cy="32" r="21" fill="var(--grey-hair)"/>
+            <circle cx="50" cy="39" r="19" fill="var(--skin-shade)"/>
+            <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin-shade)"/>
+            <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin-shade)"/>
+            <path d="M39 35 Q43 32 47 35 M53 35 Q57 32 61 35" stroke="var(--grey-hair)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <circle cx="43" cy="41" r="2.1" fill="var(--ink)"/>
+            <circle cx="58" cy="41" r="2.1" fill="var(--ink)"/>
+            <path d="M42 48 Q50 52 58 48" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          </svg></div>
+          <div class="comic-text"><div class="comic-name">Фома Кузьмич, механик</div><div class="comic-bubble">На конвейере опять рассыпался подшипник, третий за квартал. Нужен такой же.</div></div>
+        </div>
+        <div class="comic-panel comic-panel--reply">
+          <div class="comic-avatar"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
+            <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--blue)"/>
+            <circle cx="50" cy="32" r="20" fill="var(--ink)"/>
+            <circle cx="37" cy="21" r="9" fill="var(--ink)"/>
+            <circle cx="63" cy="21" r="9" fill="var(--ink)"/>
+            <circle cx="50" cy="15" r="8" fill="var(--ink)"/>
+            <circle cx="28" cy="29" r="7" fill="var(--ink)"/>
+            <circle cx="72" cy="29" r="7" fill="var(--ink)"/>
+            <circle cx="50" cy="39" r="19" fill="var(--skin)"/>
+            <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin)"/>
+            <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin)"/>
+            <path d="M40 35 Q43 32 46 35 M54 35 Q57 32 60 35" stroke="var(--ink)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <circle cx="43" cy="41" r="2.3" fill="var(--ink)"/>
+            <circle cx="59" cy="41" r="2.3" fill="var(--ink)"/>
+            <path d="M41 48 Q50 56 61 47" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          </svg></div>
+          <div class="comic-text"><div class="comic-name">Елисей, стажёр</div><div class="comic-bubble">Отправим сегодня же, Фома Кузьмич! Счёт пришлю на почту.</div></div>
+        </div>
+        <div class="comic-panel">
+          <div class="comic-avatar"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
+            <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--orange)"/>
+            <circle cx="50" cy="32" r="20" fill="var(--ink)"/>
+            <rect x="26" y="25" width="13" height="34" rx="6.5" fill="var(--ink)"/>
+            <rect x="61" y="25" width="13" height="34" rx="6.5" fill="var(--ink)"/>
+            <circle cx="50" cy="39" r="19" fill="var(--skin)"/>
+            <circle cx="30" cy="44" r="2.3" fill="var(--orange)"/>
+            <circle cx="70" cy="44" r="2.3" fill="var(--orange)"/>
+            <path d="M40 32 Q43 29 46 32 M54 32 Q57 29 60 32" stroke="var(--ink)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <circle cx="43" cy="40" r="2.1" fill="var(--ink)"/>
+            <circle cx="58" cy="40" r="2.1" fill="var(--ink)"/>
+            <path d="M41 47 Q50 53 59 46" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          </svg></div>
+          <div class="comic-text"><div class="comic-name">Серафима, опытный менеджер</div><div class="comic-bubble">Фома Кузьмич, а что рядом с узлом: вода, пыль, нагрев? Если внутрь попадает грязь, такой же подшипник опять проживёт пару месяцев. Подберём с защитой.</div></div>
+        </div>
+        <div class="scene-note">Три поломки подряд — признак того, что деталь не подходит к условиям работы.</div>
+      </div>
+    </div>
+
+  </div>
+  <h3 class="chars-title">Персонажи курсов</h3>
+  <p class="cap" style="margin-bottom:24px">Примеры существующих сквозных героев. У каждого постоянный характер, внешний вид (по брендбуку) и своя роль в сцене, поэтому из курса в курс ученик узнаёт их сразу.</p>
+  <div class="chars">
+    <div class="char">
+      <div class="char-head"><div class="char-ava"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
+        <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--blue-dark)"/>
+        <path d="M42 62 L50 74 L58 62 L50 68 Z" fill="var(--orange)"/>
+        <path d="M40 62 L38 78 L46 66 Z M60 62 L62 78 L54 66 Z" fill="#fff"/>
+        <circle cx="50" cy="32" r="21" fill="var(--ink)"/>
+        <circle cx="50" cy="39" r="19" fill="var(--skin)"/>
+        <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin)"/>
+        <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin)"/>
+        <path d="M44 14 Q39 20 38 27" stroke="var(--skin)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <path d="M39 35 Q43 32 47 35 M53 35 Q57 32 61 35" stroke="var(--ink)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        <circle cx="43" cy="41" r="2.1" fill="var(--ink)"/>
+        <circle cx="58" cy="41" r="2.1" fill="var(--ink)"/>
+        <path d="M44 48 Q50 51 56 48" stroke="var(--ink)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg></div><div><h3>Мирон</h3><p class="cap">Наставник, руководитель отдела продаж</p></div></div>
+      <p class="char-desc">Сдержанный и терпеливый, с лёгким сарказмом по ситуации, но не по человеку. Задаёт ситуацию или подводит итог сцены. Сам никогда не ошибается.</p>
+      <div class="char-quote">Не хватает пункта в заявке — не угадывай, спроси клиента. Пара минут на вопросы дешевле, чем возврат подшипника, который не подошёл.</div>
+    </div>
+    <div class="char">
+      <div class="char-head"><div class="char-ava"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
+        <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--blue)"/>
+        <circle cx="50" cy="32" r="20" fill="var(--ink)"/>
+        <circle cx="37" cy="21" r="9" fill="var(--ink)"/>
+        <circle cx="63" cy="21" r="9" fill="var(--ink)"/>
+        <circle cx="50" cy="15" r="8" fill="var(--ink)"/>
+        <circle cx="28" cy="29" r="7" fill="var(--ink)"/>
+        <circle cx="72" cy="29" r="7" fill="var(--ink)"/>
+        <circle cx="50" cy="39" r="19" fill="var(--skin)"/>
+        <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin)"/>
+        <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin)"/>
+        <path d="M40 35 Q43 32 46 35 M54 35 Q57 32 60 35" stroke="var(--ink)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <circle cx="43" cy="41" r="2.3" fill="var(--ink)"/>
+        <circle cx="59" cy="41" r="2.3" fill="var(--ink)"/>
+        <path d="M41 48 Q50 56 61 47" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      </svg></div><div><h3>Елисей</h3><p class="cap">Стажёр</p></div></div>
+      <p class="char-desc">Искренне старается и торопится с выводами. Совершает типичную ошибку урока не от лени, а от неопытности, поэтому ученик узнаёт в нём себя без обиды.</p>
+      <div class="char-quote">Фома Кузьмич, подшипник же копеечный! Диктуйте номер — сразу оформим.</div>
+    </div>
+    <div class="char">
+      <div class="char-head"><div class="char-ava"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
+        <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--orange)"/>
+        <circle cx="50" cy="32" r="20" fill="var(--ink)"/>
+        <rect x="26" y="25" width="13" height="34" rx="6.5" fill="var(--ink)"/>
+        <rect x="61" y="25" width="13" height="34" rx="6.5" fill="var(--ink)"/>
+        <circle cx="50" cy="39" r="19" fill="var(--skin)"/>
+        <circle cx="30" cy="44" r="2.3" fill="var(--orange)"/>
+        <circle cx="70" cy="44" r="2.3" fill="var(--orange)"/>
+        <path d="M40 32 Q43 29 46 32 M54 32 Q57 29 60 32" stroke="var(--ink)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <circle cx="43" cy="40" r="2.1" fill="var(--ink)"/>
+        <circle cx="58" cy="40" r="2.1" fill="var(--ink)"/>
+        <path d="M41 47 Q50 53 59 46" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      </svg></div><div><h3>Серафима</h3><p class="cap">Опытный менеджер</p></div></div>
+      <p class="char-desc">Спокойная, точная, чуть занудная. Показывает верный вариант той же ситуации и объясняет его фактами и цифрами, а не моралью.</p>
+      <div class="char-quote">Сравним по ТУ честно: ресурс, температура, комплект. Пришлите их спецификацию — сделаю таблицу, а не буду просто спорить о цене.</div>
+    </div>
+    <div class="char">
+      <div class="char-head"><div class="char-ava"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
+        <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--blue)"/>
+        <path d="M40 62 L42 76 L50 68 L58 76 L60 62 Z" fill="var(--orange)"/>
+        <circle cx="50" cy="32" r="21" fill="var(--grey-hair)"/>
+        <circle cx="50" cy="39" r="19" fill="var(--skin-shade)"/>
+        <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin-shade)"/>
+        <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin-shade)"/>
+        <path d="M39 35 Q43 32 47 35 M53 35 Q57 32 61 35" stroke="var(--grey-hair)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        <circle cx="43" cy="41" r="2.1" fill="var(--ink)"/>
+        <circle cx="58" cy="41" r="2.1" fill="var(--ink)"/>
+        <path d="M42 48 Q50 52 58 48" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      </svg></div><div><h3>Фома Кузьмич</h3><p class="cap">Клиент, механик</p></div></div>
+      <p class="char-desc">Дотошный, ему важны детали, сроки и совместимость. Поначалу ворчит, пока не убедится, что с ним говорят по существу. Именно он создаёт ситуацию, на которую реагируют остальные.</p>
+      <div class="char-quote">Дайте что подешевле. Уплотнение — копеечная деталь, чего там выбирать.</div>
+    </div>
+    <div class="char">
+      <div class="char-head"><div class="char-ava"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
+        <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="#8A93A6"/>
+        <circle cx="50" cy="32" r="20" fill="var(--ink)"/>
+        <circle cx="50" cy="39" r="19" fill="var(--skin)"/>
+        <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin)"/>
+        <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin)"/>
+        <path d="M32 24 Q40 31 50 25 Q60 31 68 24 L68 18 Q50 14 32 18 Z" fill="var(--ink)"/>
+        <circle cx="43" cy="40" r="6.5" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+        <circle cx="58" cy="40" r="6.5" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+        <path d="M49.5 40 L51.5 40" stroke="var(--ink)" stroke-width="1.5"/>
+        <circle cx="43" cy="40" r="1.9" fill="var(--ink)"/>
+        <circle cx="58" cy="40" r="1.9" fill="var(--ink)"/>
+        <path d="M44 51 Q51 56 58 50" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      </svg></div><div><h3>Кулибин</h3><p class="cap">Инженер-конструктор</p></div></div>
+      <p class="char-desc">Балагур и шутник. Объясняет, как продукт устроен внутри, через неожиданные бытовые сравнения, которые помогают запомнить технический факт.</p>
+      <div class="char-quote">Менять уплотнение в грязной системе — это как надевать чистые носки, не помыв ноги. Поэтому первый вопрос механику не «какое уплотнение стояло», а «что у вас с маслом».</div>
+    </div>
+    <div class="char">
+      <div class="char-head"><div class="char-ava"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
+        <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--ink)"/>
+        <path d="M42 62 L50 68 L42 74 Z M58 62 L50 68 L58 74 Z" fill="var(--orange)"/>
+        <circle cx="50" cy="68" r="2.2" fill="var(--orange)"/>
+        <circle cx="50" cy="32" r="20" fill="var(--grey-hair)"/>
+        <circle cx="37" cy="21" r="9" fill="var(--grey-hair)"/>
+        <circle cx="63" cy="21" r="9" fill="var(--grey-hair)"/>
+        <circle cx="50" cy="15" r="8" fill="var(--grey-hair)"/>
+        <circle cx="28" cy="29" r="7" fill="var(--grey-hair)"/>
+        <circle cx="72" cy="29" r="7" fill="var(--grey-hair)"/>
+        <circle cx="50" cy="39" r="19" fill="var(--skin-shade)"/>
+        <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin-shade)"/>
+        <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin-shade)"/>
+        <rect x="37" y="35" width="12" height="9" rx="2" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+        <rect x="51" y="35" width="12" height="9" rx="2" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+        <path d="M49 39 L51 39" stroke="var(--ink)" stroke-width="1.6"/>
+        <circle cx="43" cy="39.5" r="1.9" fill="var(--ink)"/>
+        <circle cx="57" cy="39.5" r="1.9" fill="var(--ink)"/>
+        <path d="M42 50 Q50 55 58 49" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      </svg></div><div><h3>Профессор Вексель</h3><p class="cap">Преподаватель</p></div></div>
+      <p class="char-desc">Тёплый, с одесской иронией. Переводит сложные термины на бытовой язык короткими афоризмами и появляется в начале новой темы, до разбора ситуации.</p>
+      <div class="char-quote">Число звонков — это как считать, сколько раз ты взмахнул удочкой, а не сколько рыбы поймал. Сорок быстрых, небрежных звонков часто дают меньше, чем двенадцать внимательных.</div>
+    </div>
+  </div>
+  <div class="grid2 ex-more">
+    <div class="card scheme">
+      <h3>Университет: факультеты</h3>
+      <p class="cap">Из чего состоит система обучения и на чём она держится.</p>
+      <svg viewBox="0 0 440 236" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Четыре факультета: школа, бакалавриат, колледж, магистратура на общем фундаменте из портала, баллов, цифрового профиля, ИИ-проверки и отчётов">
+        <g font-family="Golos Text, sans-serif" text-anchor="middle">
+          <path d="M6 58 L220 4 L434 58 Z" fill="#0E3B5C"/>
+          <text x="220" y="51" font-size="12" fill="#FFFFFF">Цели бизнеса: выход на план, рост продаж</text>
+          <rect x="14" y="68" width="96" height="108" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
+          <text x="62" y="92" font-size="11.5" font-weight="700" fill="#0E3B5C">ШКОЛА</text>
+          <text x="62" y="116" font-size="12" fill="#1E2A36">адаптация</text>
+          <text x="62" y="134" font-size="12" fill="#1E2A36">стажировка</text>
+          <text x="62" y="152" font-size="12" fill="#1E2A36">аттестация</text>
+          <rect x="118" y="68" width="96" height="108" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
+          <text x="166" y="92" font-size="11.5" font-weight="700" fill="#0E3B5C">БАКАЛАВРИАТ</text>
+          <text x="166" y="116" font-size="12" fill="#1E2A36">звонки</text>
+          <text x="166" y="134" font-size="12" fill="#1E2A36">квалификация</text>
+          <text x="166" y="152" font-size="12" fill="#1E2A36">переговоры</text>
+          <rect x="222" y="68" width="96" height="108" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
+          <text x="270" y="92" font-size="11.5" font-weight="700" fill="#0E3B5C">КОЛЛЕДЖ</text>
+          <text x="270" y="116" font-size="12" fill="#1E2A36">курсы</text>
+          <text x="270" y="134" font-size="12" fill="#1E2A36">по продукту</text>
+          <text x="270" y="152" font-size="12" fill="#1E2A36">и поставщикам</text>
+          <rect x="326" y="68" width="100" height="108" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
+          <text x="376" y="92" font-size="11.5" font-weight="700" fill="#0E3B5C">МАГИСТРАТУРА</text>
+          <text x="376" y="116" font-size="12" fill="#1E2A36">руководители</text>
+          <text x="376" y="134" font-size="12" fill="#1E2A36">курс РОП</text>
+          <text x="376" y="152" font-size="12" fill="#1E2A36">метрики</text>
+          <rect x="6" y="186" width="428" height="44" rx="8" fill="#48C9B0"/>
+          <text x="220" y="204" font-size="12" font-weight="700" fill="#0E3B5C">ФУНДАМЕНТ</text>
+          <text x="220" y="221" font-size="12" fill="#0E3B5C">портал · баллы · цифровой профиль · ИИ-проверка · отчёты</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="card scheme">
+      <h3>Университет: обучение по ролям</h3>
+      <p class="cap">Кто чему учится: обучение подбирается под роль, а не одно на всех.</p>
+      <svg viewBox="0 0 440 262" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Матрица: роли новичок, менеджер, опытный, руководитель и области компания, продажи, продукт, управление">
+        <g font-family="Golos Text, sans-serif" font-size="11.5">
+          <g font-weight="700" fill="#0E3B5C" text-anchor="middle">
+            <text x="131" y="16">КОМПАНИЯ</text><text x="217" y="16">ПРОДАЖИ</text><text x="303" y="16">ПРОДУКТ</text><text x="389" y="16">УПРАВЛЕНИЕ</text>
+          </g>
+          <g font-weight="700" fill="#0E3B5C">
+            <text x="0" y="49">Новичок</text><text x="0" y="93">Менеджер</text><text x="0" y="137">Опытный</text><text x="0" y="181">Руководитель</text>
+          </g>
+          <g text-anchor="middle">
+            <rect x="92" y="28" width="78" height="34" rx="6" fill="#0E3B5C"/><text x="131" y="49" fill="#FFFFFF">адаптация</text>
+            <rect x="178" y="28" width="78" height="34" rx="6" fill="#2E86C1"/><text x="217" y="49" fill="#FFFFFF">звонок</text>
+            <rect x="264" y="28" width="78" height="34" rx="6" fill="#EEF7FC" stroke="#D9E3EC"/><text x="303" y="49" fill="#1E2A36">основы</text>
+            <rect x="350" y="28" width="78" height="34" rx="6" fill="#FFFFFF" stroke="#D9E3EC"/>
+            <rect x="92" y="72" width="78" height="34" rx="6" fill="#EEF7FC" stroke="#D9E3EC"/><text x="131" y="93" fill="#1E2A36">регламенты</text>
+            <rect x="178" y="72" width="78" height="34" rx="6" fill="#0E3B5C"/><text x="217" y="93" fill="#FFFFFF">потребности</text>
+            <rect x="264" y="72" width="78" height="34" rx="6" fill="#0E3B5C"/><text x="303" y="93" fill="#FFFFFF">все группы</text>
+            <rect x="350" y="72" width="78" height="34" rx="6" fill="#FFFFFF" stroke="#D9E3EC"/>
+            <rect x="92" y="116" width="78" height="34" rx="6" fill="#FFFFFF" stroke="#D9E3EC"/>
+            <rect x="178" y="116" width="78" height="34" rx="6" fill="#2E86C1"/><text x="217" y="137" fill="#FFFFFF">переговоры</text>
+            <rect x="264" y="116" width="78" height="34" rx="6" fill="#2E86C1"/><text x="303" y="137" fill="#FFFFFF">сложные</text>
+            <rect x="350" y="116" width="78" height="34" rx="6" fill="#EEF7FC" stroke="#D9E3EC"/><text x="389" y="137" fill="#1E2A36">наставник</text>
+            <rect x="92" y="160" width="78" height="34" rx="6" fill="#EEF7FC" stroke="#D9E3EC"/><text x="131" y="181" fill="#1E2A36">стратегия</text>
+            <rect x="178" y="160" width="78" height="34" rx="6" fill="#EEF7FC" stroke="#D9E3EC"/><text x="217" y="181" fill="#1E2A36">разбор</text>
+            <rect x="264" y="160" width="78" height="34" rx="6" fill="#FFFFFF" stroke="#D9E3EC"/>
+            <rect x="350" y="160" width="78" height="34" rx="6" fill="#0E3B5C"/><text x="389" y="181" fill="#FFFFFF">курс РОП</text>
+          </g>
+          <rect x="92" y="222" width="14" height="14" rx="3" fill="#0E3B5C"/><text x="112" y="234" fill="#1E2A36">обязательно</text>
+          <rect x="200" y="222" width="14" height="14" rx="3" fill="#2E86C1"/><text x="220" y="234" fill="#1E2A36">рекомендовано</text>
+          <rect x="322" y="222" width="14" height="14" rx="3" fill="#EEF7FC" stroke="#D9E3EC"/><text x="342" y="234" fill="#1E2A36">по желанию</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="card scheme wide">
+      <h3>Университет: путь сотрудника</h3>
+      <p class="cap">Что сотрудник проходит и в какой момент.</p>
+      <svg class="mob-only" viewBox="0 0 320 432" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Путь сотрудника по шагам">
+        <g font-family="Golos Text, sans-serif">
+          <line x1="20" y1="20" x2="20" y2="300" stroke="#C2D0DD" stroke-width="3"/>
+          <path d="M13 300 L20 314 L27 300 Z" fill="#C2D0DD"/>
+          <circle cx="20" cy="28" r="8" fill="#0E3B5C"/><text x="44" y="25" font-size="15" font-weight="700" fill="#0E3B5C">ДЕНЬ 1</text><text x="44" y="45" font-size="15" fill="#1E2A36">доступы, компания</text>
+<circle cx="20" cy="92" r="8" fill="#0E3B5C"/><text x="44" y="89" font-size="15" font-weight="700" fill="#0E3B5C">2 НЕДЕЛИ</text><text x="44" y="109" font-size="15" fill="#1E2A36">адаптация, первый тест</text>
+<circle cx="20" cy="156" r="8" fill="#0E3B5C"/><text x="44" y="153" font-size="15" font-weight="700" fill="#0E3B5C">3 МЕСЯЦА</text><text x="44" y="173" font-size="15" fill="#1E2A36">стажировка, аттестация</text>
+<circle cx="20" cy="220" r="8" fill="#0E3B5C"/><text x="44" y="217" font-size="15" font-weight="700" fill="#0E3B5C">1 ГОД</text><text x="44" y="237" font-size="15" fill="#1E2A36">продажи, переаттестация</text>
+<circle cx="20" cy="284" r="8" fill="#2E86C1"/><text x="44" y="281" font-size="15" font-weight="700" fill="#2E86C1">РОСТ</text><text x="44" y="301" font-size="15" fill="#1E2A36">курс руководителя</text>
+
+          <rect x="1" y="332" width="318" height="44" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
+          <text x="160" y="353" font-size="13" fill="#0E3B5C" text-anchor="middle">параллельно: продуктовые курсы</text>
+          <text x="160" y="369" font-size="13" fill="#0E3B5C" text-anchor="middle">по нужным группам</text>
+          <rect x="1" y="386" width="318" height="44" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
+          <text x="160" y="407" font-size="13" fill="#0E3B5C" text-anchor="middle">всегда под рукой:</text>
+          <text x="160" y="423" font-size="13" fill="#0E3B5C" text-anchor="middle">база знаний и ИИ-помощник</text>
+        </g>
+      </svg>
+      <svg class="desk-only" viewBox="0 0 1000 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Путь сотрудника: день 1, две недели, три месяца, год, рост до руководителя; параллельно продуктовые курсы, база знаний и ИИ-помощник">
+        <g font-family="Golos Text, sans-serif" text-anchor="middle" font-size="15">
+          <line x1="40" y1="56" x2="960" y2="56" stroke="#C2D0DD" stroke-width="3"/>
+          <path d="M960 49 L976 56 L960 63 Z" fill="#C2D0DD"/>
+          <circle cx="100" cy="56" r="9" fill="#0E3B5C"/><text x="100" y="30" font-weight="700" fill="#0E3B5C">ДЕНЬ 1</text><text x="100" y="90" fill="#1E2A36">доступы, компания</text>
+          <circle cx="300" cy="56" r="9" fill="#0E3B5C"/><text x="300" y="30" font-weight="700" fill="#0E3B5C">2 НЕДЕЛИ</text><text x="300" y="90" fill="#1E2A36">адаптация, первый тест</text>
+          <circle cx="500" cy="56" r="9" fill="#0E3B5C"/><text x="500" y="30" font-weight="700" fill="#0E3B5C">3 МЕСЯЦА</text><text x="500" y="90" fill="#1E2A36">стажировка, аттестация</text>
+          <circle cx="700" cy="56" r="9" fill="#0E3B5C"/><text x="700" y="30" font-weight="700" fill="#0E3B5C">1 ГОД</text><text x="700" y="90" fill="#1E2A36">продажи, переаттестация</text>
+          <circle cx="890" cy="56" r="9" fill="#2E86C1"/><text x="890" y="30" font-weight="700" fill="#2E86C1">РОСТ</text><text x="890" y="90" fill="#1E2A36">курс руководителя</text>
+          <rect x="20" y="118" width="470" height="44" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
+          <text x="255" y="146" fill="#0E3B5C">параллельно: продуктовые курсы по нужным группам</text>
+          <rect x="510" y="118" width="470" height="44" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
+          <text x="745" y="146" fill="#0E3B5C">всегда под рукой: база знаний и ИИ-помощник</text>
+        </g>
+      </svg>
+    </div>
+    <div class="card wide">
+      <h3>Отчёт для руководителя</h3>
+      <p class="cap">Готова ли команда продавать и какие решения нужны. Данные в примере вымышлены.</p>
+      <div class="rep-grid">
+      <div class="kpis">
+        <div class="kpi"><b>8 из 11</b><span>готовы работать самостоятельно</span></div>
+        <div class="kpi"><b>52 → 86 %</b><span>знания до и после курсов</span></div>
+        <div class="kpi"><b>18 % / 11 %</b><span>звонок → встреча: прошли обучение / нет</span></div>
+      </div>
+      <div>
+      <div class="rep-sub">Где отдел ошибается</div>
+      <p class="cap" style="margin-bottom:8px">Сколько сотрудников из 11 ошибаются в тестах и тренажёрах по каждой теме.</p>
+      <div class="gaps">
+        <div class="gap"><span>Работа с возражениями</span><div class="bar"><i style="width:64%"></i></div><b>7 из 11</b></div>
+        <div class="gap"><span>Квалификация клиента</span><div class="bar"><i style="width:45%"></i></div><b>5 из 11</b></div>
+        <div class="gap"><span>Продукт: насосы</span><div class="bar"><i style="width:36%"></i></div><b>4 из 11</b></div>
+        <div class="gap"><span>Техника звонка</span><div class="bar"><i style="width:18%"></i></div><b>2 из 11</b></div>
+      </div>
+      </div>
+      <div>
+      <div class="rep-sub">Требует вашего решения</div>
+      <ul class="list">
+        <li>Олег С. продаёт насосы, но не сдал по ним курс: высокий риск ошибок в подборе. Назначить пересдачу до конца месяца.</li>
+        <li>Отдел проседает в работе с возражениями. Запустить тренажёр на две недели и сравнить конверсию.</li>
+      </ul>
+      </div>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <h2>Опыт и образование</h2>
+  <p class="exp">16 лет работы, из них 10 — в управлении бизнесом рядом с собственниками. Последние два года с нуля строю корпоративный университет для B2B-дистрибьютора промышленного оборудования: от архитектуры обучения до собственного портала и ИИ-инструментов.</p>
+  <div class="grid2">
+    <div>
+      <h3>Высшее образование</h3>
+      <ul class="edu">
+        <li><span class="yr">2006</span><span><b>Российский государственный гуманитарный университет</b><br>Институт филологии и истории, историк</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Повышение квалификации</h3>
+      <ul class="edu">
+        <li><span class="yr">2026</span><span><b>Innovative Teaching: Engaging Adult Learners with Active Learning</b><br>University of Padova и University of Georgia, итоговый балл&nbsp;96&nbsp;%. <a class="link" href="docs/padova-active-learning.pdf" target="_blank" rel="noopener">Сертификат</a></span></li>
+        <li><span class="yr">2026</span><span><b>Take Your Teaching Online</b><br>The Open University, итоговый балл&nbsp;97&nbsp;%. <a class="link" href="docs/open-university-teaching-online.pdf" target="_blank" rel="noopener">Сертификат</a></span></li>
+        <li><span class="yr">2023</span><span><b>Комплексный маркетинг</b><br>МАЭР</span></li>
+        <li><span class="yr">2018</span><span><b>Основы веб-дизайна</b><br>GeekBrains</span></li>
+        <li><span class="yr">2017</span><span><b>PowerPoint: дизайн презентаций</b><br>УЦ «Специалист» при МГТУ им. Н. Э. Баумана</span></li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section class="contacts" id="contacts"><div class="wrap">
+  <h2>Контакты</h2>
+  <div class="clist">
+    <a href="https://t.me/marin_k"><span>Telegram</span><b>@marin_k</b></a>
+    <a href="mailto:marina.nk@inbox.ru"><span>Почта</span><b>marina.nk@inbox.ru</b></a>
+    <a href="tel:+79265522734"><span>Телефон</span><b>+7 (926) 552-27-34</b></a>
+  </div>
+  <p>Самозанятость или договор ГПХ. Работаю удалённо. Подписываю NDA. Первый разговор — 30 минут, бесплатно.</p>
+</div></section>
+
+<script>
+const opts=[...document.querySelectorAll('.opt')], fb=document.getElementById('fb');
+let picked=null, checked=false;
+opts.forEach(o=>o.addEventListener('click',()=>{ if(checked) return; opts.forEach(x=>x.classList.remove('sel')); o.classList.add('sel'); picked=o; }));
+document.getElementById('check').addEventListener('click',()=>{
+  if(checked) return;
+  if(!picked){ fb.className='fb show'; fb.textContent='Сначала выберите вариант ответа.'; return; }
+  checked=true; const ok=picked.dataset.ok==='1';
+  picked.classList.remove('sel'); picked.classList.add(ok?'right':'wrong');
+  fb.className='fb show '+(ok?'right':'wrong');
+  fb.innerHTML='<b>'+(ok?'Верно. ':'Не совсем. ')+'</b>'+picked.dataset.fb;
+});
+document.getElementById('again').addEventListener('click',()=>{
+  checked=false; picked=null; opts.forEach(x=>x.className='opt'); fb.className='fb'; fb.textContent='';
+});
+</script>
+<button class="to-top" id="toTop" aria-label="Наверх"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+<script>
+const toTop=document.getElementById('toTop');
+addEventListener('scroll',()=>toTop.classList.toggle('show',scrollY>400),{passive:true});
+toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
