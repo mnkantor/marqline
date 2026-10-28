@@ -173,6 +173,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .to-top:hover{background:var(--deep-light)}
 .to-top:active{background:var(--deep-dark)}
 .to-top svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.pf{flex-direction:row;align-items:center;justify-content:space-between;gap:24px;margin-bottom:24px;scroll-margin-top:96px}
+.pf h3{margin-bottom:8px}
+.pf p{margin:0}
+.pf-act{display:flex;align-items:center;gap:16px;flex-shrink:0}
+@media(max-width:860px){.pf{flex-direction:column;align-items:flex-start}.pf-act{flex-wrap:wrap}}
 @media(max-width:860px){.to-top{right:16px;bottom:16px;width:44px;height:44px}}
 
 /* отчёт */
@@ -230,7 +235,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 <nav><div class="wrap">
   <span class="name">Марина Кантор</span>
   <div class="menu">
-    <a href="#directions">Направления</a><a href="#price">Стоимость</a><a href="#examples">Примеры работ</a><a href="#education">Опыт и образование</a><a href="#contacts">Контакты</a>
+    <a href="#directions">Направления</a><a href="#price">Стоимость</a><a href="#examples">Примеры работ</a><a href="#portfolio">Портфолио</a><a href="#education">Опыт и образование</a><a href="#contacts">Контакты</a>
   </div>
 </div></nav>
 
@@ -320,6 +325,10 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 
 <section class="alt" id="examples"><div class="wrap">
   <h2>Примеры работ</h2>
+  <div class="card pf" id="portfolio">
+    <div><h3>Портфолио</h3><p>Два кейса целиком: задача заказчика, решение, почему так, скрины платформ. Кейсы обезличены по условиям NDA.</p></div>
+    <div class="pf-act"><a class="btn btn-sec" href="docs/portfolio-kantor.pdf" target="_blank" rel="noopener">Скачать портфолио</a><span class="cap">PDF, 7 МБ</span></div>
+  </div>
   <div class="grid2">
 
     <div class="card">
