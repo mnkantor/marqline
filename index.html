@@ -173,6 +173,41 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .to-top:hover{background:var(--deep-light)}
 .to-top:active{background:var(--deep-dark)}
 .to-top svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.ex-intro{max-width:none;margin:-12px 0 28px}
+.case{padding:32px;margin-bottom:24px}
+.cs-tag{align-self:flex-start;background:var(--bg);color:var(--deep);font-size:14px;line-height:1;border-radius:999px;padding:6px 14px;margin-bottom:16px}
+.case h3{font-size:22px;margin-bottom:16px}
+.cs-lead{max-width:none;margin-bottom:20px}
+.cs-sub{font-size:15px;font-weight:700;text-transform:uppercase;color:var(--deep);margin-bottom:8px}
+.cs-path{display:flex;margin-bottom:28px}
+.cs-path div{flex:1 1 0;min-width:0;height:84px;padding:12px 26px;margin-left:-12px;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%,22px 50%);display:flex;flex-direction:column;justify-content:center;line-height:1.3}
+.cs-path div:first-child{margin-left:0;padding-left:16px;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%)}
+.cs-path div:nth-child(1){background:#EEF7FC}.cs-path div:nth-child(2){background:#DCEFF8}.cs-path div:nth-child(3){background:#C8E7F4}.cs-path div:nth-child(4){background:#B4DEF0}.cs-path div:nth-child(5){background:#A0D5EC}
+.cs-path b{color:var(--deep);font-size:16px;white-space:nowrap}
+.cs-path span{font-size:13px;white-space:nowrap}
+.cs-tsr{margin-bottom:32px;line-height:1.45}
+.cs-h,.cs-r{display:grid;grid-template-columns:1fr 24px 1.1fr 1.35fr;column-gap:12px}
+.cs-h span{font-size:14px;font-weight:700;text-transform:uppercase;color:var(--deep);padding-bottom:8px}
+.cs-r>div{border-top:1px solid var(--line);padding:12px 0}
+.cs-r .ar{color:var(--sea);font-weight:700}
+.cs-shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start}
+.cs-shots figure{margin:0}
+.cs-shots.wide{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cs-shots.wide figure:first-child{grid-column:1/-1}
+.cs-shots img{display:block;width:100%;height:auto}
+.cs-shots figcaption{font-size:15px;color:var(--text);margin-top:10px;line-height:1.4}
+.cs-demo{max-width:none;margin-top:16px;font-size:15px;color:var(--deep)}
+@media(max-width:860px){
+.case{padding:20px}
+.cs-path{flex-direction:column;gap:6px}
+.cs-path div,.cs-path div:first-child{height:auto;margin-left:0;padding:10px 16px;clip-path:none;border-radius:8px}
+.cs-tag{line-height:1.3;border-radius:12px}
+.cs-h{display:none}
+.cs-r{grid-template-columns:1fr;border-top:1px solid var(--line);padding:12px 0}
+.cs-r>div{border-top:0;padding:2px 0}.cs-r>div:first-child{font-weight:700;color:var(--deep)}.cs-r .ar{display:none}
+.cs-r>div[data-l]::before{content:attr(data-l) ": ";font-weight:600;color:var(--deep)}
+.cs-shots{grid-template-columns:1fr}
+}
 .pf{flex-direction:row;align-items:center;justify-content:space-between;gap:24px;margin-bottom:24px;scroll-margin-top:96px}
 .pf h3{margin-bottom:8px}
 .pf p{margin:0}
@@ -325,347 +360,31 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 
 <section class="alt" id="examples"><div class="wrap">
   <h2>Примеры работ</h2>
+  <p class="ex-intro">Два реальных проекта: задача заказчика, решение и почему так. Кейсы обезличены по условиям подписанного NDA. Работу на живых платформах продемонстрирую на видеозвонке при помощи демонстрации экрана.</p>
+
+  <div class="card case">
+    <span class="cs-tag">Кейс 1 · B2B-дистрибьютор промышленного оборудования</span>
+    <h3>Корпоративный университет с нуля</h3>
+    <div class="cs-sub">Целевая аудитория — весь отдел продаж</div>
+    <div class="cs-path"><div><b>Школа</b><span>новые сотрудники,<br>первый месяц</span></div><div><b>Колледж</b><span>база знаний<br>по продукту</span></div><div><b>Бакалавриат</b><span>действующие<br>менеджеры</span></div><div><b>Магистратура</b><span>руководители<br>отделов продаж</span></div><div><b>МБА</b><span>высшее<br>руководство</span></div></div>
+    <div class="cs-tsr"><div class="cs-h"><span>Задача заказчика</span><span></span><span>Решение</span><span>Почему так</span></div><div class="cs-r"><div>Вводить новичков в профессию</div><div class="ar">→</div><div data-l="Решение">Школа: первый месяц по шагам</div><div data-l="Почему так">Новый сотрудник становится самостоятельным за первый месяц испытательного срока. Требуется меньше внимания наставника</div></div><div class="cs-r"><div>Усиливать навыки менеджеров</div><div class="ar">→</div><div data-l="Решение">Модуль продаж = этап воронки</div><div data-l="Почему так">Результат виден в конверсии этапа, а не в часах обучения</div></div><div class="cs-r"><div>Хранить знания в одном месте</div><div class="ar">→</div><div data-l="Решение">Свой портал, курсы и шпаргалки</div><div data-l="Почему так">Знание не уходит вместе с сотрудником</div></div><div class="cs-r"><div>Измерять результат</div><div class="ar">→</div><div data-l="Решение">Замер до, после и через месяц</div><div data-l="Почему так">Видно не только «знает», но и «применяет в работе»</div></div><div class="cs-r"><div>Влиять на прибыль</div><div class="ar">→</div><div data-l="Решение">Связь обучения с показателями CRM</div><div data-l="Почему так">Окупаемость обучения — контролируемая метрика</div></div></div>
+    <div class="cs-shots"><figure><a href="img/cases/k1-portal.webp" target="_blank" rel="noopener"><img src="img/cases/k1-portal.webp" alt="Главная портала: пять уровней обучения" loading="lazy"></a><figcaption>Главная портала: пять уровней обучения</figcaption></figure><figure><a href="img/cases/k1-lesson.webp" target="_blank" rel="noopener"><img src="img/cases/k1-lesson.webp" alt="Урок по продукту: интерактивные схемы и тренажёры" loading="lazy"></a><figcaption>Урок по продукту: интерактивные схемы и тренажёры</figcaption></figure><figure><a href="img/cases/k1-manager.webp" target="_blank" rel="noopener"><img src="img/cases/k1-manager.webp" alt="Панель руководителя: кто не учится и почему" loading="lazy"></a><figcaption>Панель руководителя: кто не учится и почему</figcaption></figure></div>
+  </div>
+
+  <div class="card case">
+    <span class="cs-tag">Кейс 2 · проектирование и оснащение спортивных объектов</span>
+    <h3>Собственная CRM для реализации проектов</h3>
+    <p class="cs-lead">Компания проектирует спортивные объекты, поставляет и монтирует спортивное оборудование. 90% заказов — государственные и корпоративные закупки. CRM спроектирована и разработана без программистов, на базе ИИ, по бизнес-процессам и регламентам компании.</p>
+    <div class="cs-sub">Кто работает в системе</div>
+    <div class="cs-path"><div><b>Директор</b><span>решения, цена<br>и скидки</span></div><div><b>РП</b><span>руководитель проекта<br>с ИИ-помощниками</span></div><div><b>Бухгалтер</b><span>оплаты<br>и выписки</span></div><div><b>Закупщик</b><span>заказы<br>поставщикам</span></div><div><b>Юрист</b><span>договоры<br>и документы</span></div></div>
+    <div class="cs-tsr"><div class="cs-h"><span>Задача заказчика</span><span></span><span>Решение</span><span>Почему так</span></div><div class="cs-r"><div>Прозрачно по любому проекту</div><div class="ar">→</div><div data-l="Решение">Одна карточка — от запроса до закрытия</div><div data-l="Почему так">Все файлы по проекту находятся в одном месте. Ничего не копируется, история не теряется</div></div><div class="cs-r"><div>Видеть и считать деньги</div><div class="ar">→</div><div data-l="Решение">План, движение денег, факт, финрезультат</div><div data-l="Почему так">Отклонение от плана видно сразу</div></div><div class="cs-r"><div>Автоматизировать всё возможное</div><div class="ar">→</div><div data-l="Решение">Воронка движется сама, скрипты и ИИ-помощники</div><div data-l="Почему так">Человек тратит время только на решения</div></div><div class="cs-r"><div>Исключить ошибки</div><div class="ar">→</div><div data-l="Решение">Цифры считают формулы, у&nbsp;каждой&nbsp;— источник</div><div data-l="Почему так">Нет ручного пересчёта и «цифр из головы»</div></div></div>
+    <div class="cs-shots wide"><figure><a href="img/cases/k2-project.webp" target="_blank" rel="noopener"><img src="img/cases/k2-project.webp" alt="Карточка проекта: путь по воронке" loading="lazy"></a><figcaption>Карточка проекта: путь по воронке</figcaption></figure><figure><a href="img/cases/k2-money.webp" target="_blank" rel="noopener"><img src="img/cases/k2-money.webp" alt="Деньги проекта: расчёт цены" loading="lazy"></a><figcaption>Деньги проекта: расчёт цены</figcaption></figure><figure><a href="img/cases/k2-docs.webp" target="_blank" rel="noopener"><img src="img/cases/k2-docs.webp" alt="Документы проекта: чего не хватает" loading="lazy"></a><figcaption>Документы проекта: чего не хватает</figcaption></figure></div>
+    <p class="cs-demo">На скринах — демо-данные, созданные для портфолио.</p>
+  </div>
+
   <div class="card pf" id="portfolio">
-    <div><h3>Портфолио</h3><p>Два кейса целиком: задача заказчика, решение, почему так, скрины платформ. Кейсы обезличены по условиям NDA.</p></div>
+    <div><h3>Портфолио</h3><p>Полная версия обоих кейсов: методология курсов, правила портала, ИИ&#8209;помощники, деньги и документы проекта.</p></div>
     <div class="pf-act"><a class="btn btn-sec" href="docs/portfolio-kantor.pdf" target="_blank" rel="noopener">Скачать портфолио</a><span class="cap">PDF, 7 МБ</span></div>
-  </div>
-  <div class="grid2">
-
-    <div class="card">
-      <h3>Демо-урок с тренажёром</h3>
-      <p class="cap">Выберите ответ менеджера и получите разбор.</p>
-      <div class="client">Клиент: «Пришлите предложение, мы подумаем».</div>
-      <div class="opts">
-        <button class="opt" data-ok="0" data-fb="Предложение уйдёт в почту и потеряется среди других. Менеджер так и не узнал, что важно клиенту и кто принимает решение.">Отправить предложение и перезвонить через неделю</button>
-        <button class="opt" data-ok="1" data-fb="Так менеджер узнаёт, по каким критериям будут сравнивать предложения и кто решает. Предложение составляется под эти критерии, а не наугад.">Уточнить критерии выбора и кто принимает решение</button>
-        <button class="opt" data-ok="0" data-fb="Скидка до того, как клиент назвал свои критерии, — это потеря денег без гарантии сделки.">Сразу дать скидку, чтобы опередить конкурентов</button>
-      </div>
-      <div class="fb" id="fb"></div>
-      <div class="row"><button class="btn btn-main" id="check">Проверить</button><button class="btn btn-sec" id="again">Заново</button></div>
-    </div>
-
-    <div class="card">
-      <h3>Фрагмент курса</h3>
-      <p class="cap">Сложный продукт — через сюжет с персонажами.</p>
-      <div class="comic">
-        <div class="comic-panel">
-          <div class="comic-avatar"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
-            <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--blue)"/>
-            <path d="M40 62 L42 76 L50 68 L58 76 L60 62 Z" fill="var(--orange)"/>
-            <circle cx="50" cy="32" r="21" fill="var(--grey-hair)"/>
-            <circle cx="50" cy="39" r="19" fill="var(--skin-shade)"/>
-            <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin-shade)"/>
-            <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin-shade)"/>
-            <path d="M39 35 Q43 32 47 35 M53 35 Q57 32 61 35" stroke="var(--grey-hair)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-            <circle cx="43" cy="41" r="2.1" fill="var(--ink)"/>
-            <circle cx="58" cy="41" r="2.1" fill="var(--ink)"/>
-            <path d="M42 48 Q50 52 58 48" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-          </svg></div>
-          <div class="comic-text"><div class="comic-name">Фома Кузьмич, механик</div><div class="comic-bubble">На конвейере опять рассыпался подшипник, третий за квартал. Нужен такой же.</div></div>
-        </div>
-        <div class="comic-panel comic-panel--reply">
-          <div class="comic-avatar"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
-            <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--blue)"/>
-            <circle cx="50" cy="32" r="20" fill="var(--ink)"/>
-            <circle cx="37" cy="21" r="9" fill="var(--ink)"/>
-            <circle cx="63" cy="21" r="9" fill="var(--ink)"/>
-            <circle cx="50" cy="15" r="8" fill="var(--ink)"/>
-            <circle cx="28" cy="29" r="7" fill="var(--ink)"/>
-            <circle cx="72" cy="29" r="7" fill="var(--ink)"/>
-            <circle cx="50" cy="39" r="19" fill="var(--skin)"/>
-            <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin)"/>
-            <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin)"/>
-            <path d="M40 35 Q43 32 46 35 M54 35 Q57 32 60 35" stroke="var(--ink)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-            <circle cx="43" cy="41" r="2.3" fill="var(--ink)"/>
-            <circle cx="59" cy="41" r="2.3" fill="var(--ink)"/>
-            <path d="M41 48 Q50 56 61 47" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-          </svg></div>
-          <div class="comic-text"><div class="comic-name">Елисей, стажёр</div><div class="comic-bubble">Отправим сегодня же, Фома Кузьмич! Счёт пришлю на почту.</div></div>
-        </div>
-        <div class="comic-panel">
-          <div class="comic-avatar"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
-            <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--orange)"/>
-            <circle cx="50" cy="32" r="20" fill="var(--ink)"/>
-            <rect x="26" y="25" width="13" height="34" rx="6.5" fill="var(--ink)"/>
-            <rect x="61" y="25" width="13" height="34" rx="6.5" fill="var(--ink)"/>
-            <circle cx="50" cy="39" r="19" fill="var(--skin)"/>
-            <circle cx="30" cy="44" r="2.3" fill="var(--orange)"/>
-            <circle cx="70" cy="44" r="2.3" fill="var(--orange)"/>
-            <path d="M40 32 Q43 29 46 32 M54 32 Q57 29 60 32" stroke="var(--ink)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-            <circle cx="43" cy="40" r="2.1" fill="var(--ink)"/>
-            <circle cx="58" cy="40" r="2.1" fill="var(--ink)"/>
-            <path d="M41 47 Q50 53 59 46" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-          </svg></div>
-          <div class="comic-text"><div class="comic-name">Серафима, опытный менеджер</div><div class="comic-bubble">Фома Кузьмич, а что рядом с узлом: вода, пыль, нагрев? Если внутрь попадает грязь, такой же подшипник опять проживёт пару месяцев. Подберём с защитой.</div></div>
-        </div>
-        <div class="scene-note">Три поломки подряд — признак того, что деталь не подходит к условиям работы.</div>
-      </div>
-    </div>
-
-  </div>
-  <h3 class="chars-title">Персонажи курсов</h3>
-  <p class="cap" style="margin-bottom:24px">Примеры существующих сквозных героев. У каждого постоянный характер, внешний вид (по брендбуку) и своя роль в сцене, поэтому из курса в курс ученик узнаёт их сразу.</p>
-  <div class="chars">
-    <div class="char">
-      <div class="char-head"><div class="char-ava"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
-        <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--blue-dark)"/>
-        <path d="M42 62 L50 74 L58 62 L50 68 Z" fill="var(--orange)"/>
-        <path d="M40 62 L38 78 L46 66 Z M60 62 L62 78 L54 66 Z" fill="#fff"/>
-        <circle cx="50" cy="32" r="21" fill="var(--ink)"/>
-        <circle cx="50" cy="39" r="19" fill="var(--skin)"/>
-        <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin)"/>
-        <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin)"/>
-        <path d="M44 14 Q39 20 38 27" stroke="var(--skin)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-        <path d="M39 35 Q43 32 47 35 M53 35 Q57 32 61 35" stroke="var(--ink)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-        <circle cx="43" cy="41" r="2.1" fill="var(--ink)"/>
-        <circle cx="58" cy="41" r="2.1" fill="var(--ink)"/>
-        <path d="M44 48 Q50 51 56 48" stroke="var(--ink)" stroke-width="2" fill="none" stroke-linecap="round"/>
-      </svg></div><div><h3>Мирон</h3><p class="cap">Наставник, руководитель отдела продаж</p></div></div>
-      <p class="char-desc">Сдержанный и терпеливый, с лёгким сарказмом по ситуации, но не по человеку. Задаёт ситуацию или подводит итог сцены. Сам никогда не ошибается.</p>
-      <div class="char-quote">Не хватает пункта в заявке — не угадывай, спроси клиента. Пара минут на вопросы дешевле, чем возврат подшипника, который не подошёл.</div>
-    </div>
-    <div class="char">
-      <div class="char-head"><div class="char-ava"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
-        <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--blue)"/>
-        <circle cx="50" cy="32" r="20" fill="var(--ink)"/>
-        <circle cx="37" cy="21" r="9" fill="var(--ink)"/>
-        <circle cx="63" cy="21" r="9" fill="var(--ink)"/>
-        <circle cx="50" cy="15" r="8" fill="var(--ink)"/>
-        <circle cx="28" cy="29" r="7" fill="var(--ink)"/>
-        <circle cx="72" cy="29" r="7" fill="var(--ink)"/>
-        <circle cx="50" cy="39" r="19" fill="var(--skin)"/>
-        <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin)"/>
-        <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin)"/>
-        <path d="M40 35 Q43 32 46 35 M54 35 Q57 32 60 35" stroke="var(--ink)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-        <circle cx="43" cy="41" r="2.3" fill="var(--ink)"/>
-        <circle cx="59" cy="41" r="2.3" fill="var(--ink)"/>
-        <path d="M41 48 Q50 56 61 47" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-      </svg></div><div><h3>Елисей</h3><p class="cap">Стажёр</p></div></div>
-      <p class="char-desc">Искренне старается и торопится с выводами. Совершает типичную ошибку урока не от лени, а от неопытности, поэтому ученик узнаёт в нём себя без обиды.</p>
-      <div class="char-quote">Фома Кузьмич, подшипник же копеечный! Диктуйте номер — сразу оформим.</div>
-    </div>
-    <div class="char">
-      <div class="char-head"><div class="char-ava"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
-        <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--orange)"/>
-        <circle cx="50" cy="32" r="20" fill="var(--ink)"/>
-        <rect x="26" y="25" width="13" height="34" rx="6.5" fill="var(--ink)"/>
-        <rect x="61" y="25" width="13" height="34" rx="6.5" fill="var(--ink)"/>
-        <circle cx="50" cy="39" r="19" fill="var(--skin)"/>
-        <circle cx="30" cy="44" r="2.3" fill="var(--orange)"/>
-        <circle cx="70" cy="44" r="2.3" fill="var(--orange)"/>
-        <path d="M40 32 Q43 29 46 32 M54 32 Q57 29 60 32" stroke="var(--ink)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-        <circle cx="43" cy="40" r="2.1" fill="var(--ink)"/>
-        <circle cx="58" cy="40" r="2.1" fill="var(--ink)"/>
-        <path d="M41 47 Q50 53 59 46" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-      </svg></div><div><h3>Серафима</h3><p class="cap">Опытный менеджер</p></div></div>
-      <p class="char-desc">Спокойная, точная, чуть занудная. Показывает верный вариант той же ситуации и объясняет его фактами и цифрами, а не моралью.</p>
-      <div class="char-quote">Сравним по ТУ честно: ресурс, температура, комплект. Пришлите их спецификацию — сделаю таблицу, а не буду просто спорить о цене.</div>
-    </div>
-    <div class="char">
-      <div class="char-head"><div class="char-ava"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
-        <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--blue)"/>
-        <path d="M40 62 L42 76 L50 68 L58 76 L60 62 Z" fill="var(--orange)"/>
-        <circle cx="50" cy="32" r="21" fill="var(--grey-hair)"/>
-        <circle cx="50" cy="39" r="19" fill="var(--skin-shade)"/>
-        <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin-shade)"/>
-        <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin-shade)"/>
-        <path d="M39 35 Q43 32 47 35 M53 35 Q57 32 61 35" stroke="var(--grey-hair)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-        <circle cx="43" cy="41" r="2.1" fill="var(--ink)"/>
-        <circle cx="58" cy="41" r="2.1" fill="var(--ink)"/>
-        <path d="M42 48 Q50 52 58 48" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-      </svg></div><div><h3>Фома Кузьмич</h3><p class="cap">Клиент, механик</p></div></div>
-      <p class="char-desc">Дотошный, ему важны детали, сроки и совместимость. Поначалу ворчит, пока не убедится, что с ним говорят по существу. Именно он создаёт ситуацию, на которую реагируют остальные.</p>
-      <div class="char-quote">Дайте что подешевле. Уплотнение — копеечная деталь, чего там выбирать.</div>
-    </div>
-    <div class="char">
-      <div class="char-head"><div class="char-ava"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
-        <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="#8A93A6"/>
-        <circle cx="50" cy="32" r="20" fill="var(--ink)"/>
-        <circle cx="50" cy="39" r="19" fill="var(--skin)"/>
-        <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin)"/>
-        <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin)"/>
-        <path d="M32 24 Q40 31 50 25 Q60 31 68 24 L68 18 Q50 14 32 18 Z" fill="var(--ink)"/>
-        <circle cx="43" cy="40" r="6.5" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-        <circle cx="58" cy="40" r="6.5" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-        <path d="M49.5 40 L51.5 40" stroke="var(--ink)" stroke-width="1.5"/>
-        <circle cx="43" cy="40" r="1.9" fill="var(--ink)"/>
-        <circle cx="58" cy="40" r="1.9" fill="var(--ink)"/>
-        <path d="M44 51 Q51 56 58 50" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-      </svg></div><div><h3>Кулибин</h3><p class="cap">Инженер-конструктор</p></div></div>
-      <p class="char-desc">Балагур и шутник. Объясняет, как продукт устроен внутри, через неожиданные бытовые сравнения, которые помогают запомнить технический факт.</p>
-      <div class="char-quote">Менять уплотнение в грязной системе — это как надевать чистые носки, не помыв ноги. Поэтому первый вопрос механику не «какое уплотнение стояло», а «что у вас с маслом».</div>
-    </div>
-    <div class="char">
-      <div class="char-head"><div class="char-ava"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="50" fill="var(--bg-card-alt)"/>
-        <path d="M12 100 C12 74 27 62 50 62 C73 62 88 74 88 100 Z" fill="var(--ink)"/>
-        <path d="M42 62 L50 68 L42 74 Z M58 62 L50 68 L58 74 Z" fill="var(--orange)"/>
-        <circle cx="50" cy="68" r="2.2" fill="var(--orange)"/>
-        <circle cx="50" cy="32" r="20" fill="var(--grey-hair)"/>
-        <circle cx="37" cy="21" r="9" fill="var(--grey-hair)"/>
-        <circle cx="63" cy="21" r="9" fill="var(--grey-hair)"/>
-        <circle cx="50" cy="15" r="8" fill="var(--grey-hair)"/>
-        <circle cx="28" cy="29" r="7" fill="var(--grey-hair)"/>
-        <circle cx="72" cy="29" r="7" fill="var(--grey-hair)"/>
-        <circle cx="50" cy="39" r="19" fill="var(--skin-shade)"/>
-        <ellipse cx="29" cy="41" rx="4" ry="6" fill="var(--skin-shade)"/>
-        <ellipse cx="71" cy="41" rx="4" ry="6" fill="var(--skin-shade)"/>
-        <rect x="37" y="35" width="12" height="9" rx="2" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
-        <rect x="51" y="35" width="12" height="9" rx="2" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
-        <path d="M49 39 L51 39" stroke="var(--ink)" stroke-width="1.6"/>
-        <circle cx="43" cy="39.5" r="1.9" fill="var(--ink)"/>
-        <circle cx="57" cy="39.5" r="1.9" fill="var(--ink)"/>
-        <path d="M42 50 Q50 55 58 49" stroke="var(--ink)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-      </svg></div><div><h3>Профессор Вексель</h3><p class="cap">Преподаватель</p></div></div>
-      <p class="char-desc">Тёплый, с одесской иронией. Переводит сложные термины на бытовой язык короткими афоризмами и появляется в начале новой темы, до разбора ситуации.</p>
-      <div class="char-quote">Число звонков — это как считать, сколько раз ты взмахнул удочкой, а не сколько рыбы поймал. Сорок быстрых, небрежных звонков часто дают меньше, чем двенадцать внимательных.</div>
-    </div>
-  </div>
-  <div class="grid2 ex-more">
-    <div class="card scheme">
-      <h3>Университет: факультеты</h3>
-      <p class="cap">Из чего состоит система обучения и на чём она держится.</p>
-      <svg viewBox="0 0 440 236" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Четыре факультета: школа, бакалавриат, колледж, магистратура на общем фундаменте из портала, баллов, цифрового профиля, ИИ-проверки и отчётов">
-        <g font-family="Golos Text, sans-serif" text-anchor="middle">
-          <path d="M6 58 L220 4 L434 58 Z" fill="#0E3B5C"/>
-          <text x="220" y="51" font-size="12" fill="#FFFFFF">Цели бизнеса: выход на план, рост продаж</text>
-          <rect x="14" y="68" width="96" height="108" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
-          <text x="62" y="92" font-size="11.5" font-weight="700" fill="#0E3B5C">ШКОЛА</text>
-          <text x="62" y="116" font-size="12" fill="#1E2A36">адаптация</text>
-          <text x="62" y="134" font-size="12" fill="#1E2A36">стажировка</text>
-          <text x="62" y="152" font-size="12" fill="#1E2A36">аттестация</text>
-          <rect x="118" y="68" width="96" height="108" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
-          <text x="166" y="92" font-size="11.5" font-weight="700" fill="#0E3B5C">БАКАЛАВРИАТ</text>
-          <text x="166" y="116" font-size="12" fill="#1E2A36">звонки</text>
-          <text x="166" y="134" font-size="12" fill="#1E2A36">квалификация</text>
-          <text x="166" y="152" font-size="12" fill="#1E2A36">переговоры</text>
-          <rect x="222" y="68" width="96" height="108" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
-          <text x="270" y="92" font-size="11.5" font-weight="700" fill="#0E3B5C">КОЛЛЕДЖ</text>
-          <text x="270" y="116" font-size="12" fill="#1E2A36">курсы</text>
-          <text x="270" y="134" font-size="12" fill="#1E2A36">по продукту</text>
-          <text x="270" y="152" font-size="12" fill="#1E2A36">и поставщикам</text>
-          <rect x="326" y="68" width="100" height="108" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
-          <text x="376" y="92" font-size="11.5" font-weight="700" fill="#0E3B5C">МАГИСТРАТУРА</text>
-          <text x="376" y="116" font-size="12" fill="#1E2A36">руководители</text>
-          <text x="376" y="134" font-size="12" fill="#1E2A36">курс РОП</text>
-          <text x="376" y="152" font-size="12" fill="#1E2A36">метрики</text>
-          <rect x="6" y="186" width="428" height="44" rx="8" fill="#48C9B0"/>
-          <text x="220" y="204" font-size="12" font-weight="700" fill="#0E3B5C">ФУНДАМЕНТ</text>
-          <text x="220" y="221" font-size="12" fill="#0E3B5C">портал · баллы · цифровой профиль · ИИ-проверка · отчёты</text>
-        </g>
-      </svg>
-    </div>
-
-    <div class="card scheme">
-      <h3>Университет: обучение по ролям</h3>
-      <p class="cap">Кто чему учится: обучение подбирается под роль, а не одно на всех.</p>
-      <svg viewBox="0 0 440 262" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Матрица: роли новичок, менеджер, опытный, руководитель и области компания, продажи, продукт, управление">
-        <g font-family="Golos Text, sans-serif" font-size="11.5">
-          <g font-weight="700" fill="#0E3B5C" text-anchor="middle">
-            <text x="131" y="16">КОМПАНИЯ</text><text x="217" y="16">ПРОДАЖИ</text><text x="303" y="16">ПРОДУКТ</text><text x="389" y="16">УПРАВЛЕНИЕ</text>
-          </g>
-          <g font-weight="700" fill="#0E3B5C">
-            <text x="0" y="49">Новичок</text><text x="0" y="93">Менеджер</text><text x="0" y="137">Опытный</text><text x="0" y="181">Руководитель</text>
-          </g>
-          <g text-anchor="middle">
-            <rect x="92" y="28" width="78" height="34" rx="6" fill="#0E3B5C"/><text x="131" y="49" fill="#FFFFFF">адаптация</text>
-            <rect x="178" y="28" width="78" height="34" rx="6" fill="#2E86C1"/><text x="217" y="49" fill="#FFFFFF">звонок</text>
-            <rect x="264" y="28" width="78" height="34" rx="6" fill="#EEF7FC" stroke="#D9E3EC"/><text x="303" y="49" fill="#1E2A36">основы</text>
-            <rect x="350" y="28" width="78" height="34" rx="6" fill="#FFFFFF" stroke="#D9E3EC"/>
-            <rect x="92" y="72" width="78" height="34" rx="6" fill="#EEF7FC" stroke="#D9E3EC"/><text x="131" y="93" fill="#1E2A36">регламенты</text>
-            <rect x="178" y="72" width="78" height="34" rx="6" fill="#0E3B5C"/><text x="217" y="93" fill="#FFFFFF">потребности</text>
-            <rect x="264" y="72" width="78" height="34" rx="6" fill="#0E3B5C"/><text x="303" y="93" fill="#FFFFFF">все группы</text>
-            <rect x="350" y="72" width="78" height="34" rx="6" fill="#FFFFFF" stroke="#D9E3EC"/>
-            <rect x="92" y="116" width="78" height="34" rx="6" fill="#FFFFFF" stroke="#D9E3EC"/>
-            <rect x="178" y="116" width="78" height="34" rx="6" fill="#2E86C1"/><text x="217" y="137" fill="#FFFFFF">переговоры</text>
-            <rect x="264" y="116" width="78" height="34" rx="6" fill="#2E86C1"/><text x="303" y="137" fill="#FFFFFF">сложные</text>
-            <rect x="350" y="116" width="78" height="34" rx="6" fill="#EEF7FC" stroke="#D9E3EC"/><text x="389" y="137" fill="#1E2A36">наставник</text>
-            <rect x="92" y="160" width="78" height="34" rx="6" fill="#EEF7FC" stroke="#D9E3EC"/><text x="131" y="181" fill="#1E2A36">стратегия</text>
-            <rect x="178" y="160" width="78" height="34" rx="6" fill="#EEF7FC" stroke="#D9E3EC"/><text x="217" y="181" fill="#1E2A36">разбор</text>
-            <rect x="264" y="160" width="78" height="34" rx="6" fill="#FFFFFF" stroke="#D9E3EC"/>
-            <rect x="350" y="160" width="78" height="34" rx="6" fill="#0E3B5C"/><text x="389" y="181" fill="#FFFFFF">курс РОП</text>
-          </g>
-          <rect x="92" y="222" width="14" height="14" rx="3" fill="#0E3B5C"/><text x="112" y="234" fill="#1E2A36">обязательно</text>
-          <rect x="200" y="222" width="14" height="14" rx="3" fill="#2E86C1"/><text x="220" y="234" fill="#1E2A36">рекомендовано</text>
-          <rect x="322" y="222" width="14" height="14" rx="3" fill="#EEF7FC" stroke="#D9E3EC"/><text x="342" y="234" fill="#1E2A36">по желанию</text>
-        </g>
-      </svg>
-    </div>
-
-    <div class="card scheme wide">
-      <h3>Университет: путь сотрудника</h3>
-      <p class="cap">Что сотрудник проходит и в какой момент.</p>
-      <svg class="mob-only" viewBox="0 0 320 432" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Путь сотрудника по шагам">
-        <g font-family="Golos Text, sans-serif">
-          <line x1="20" y1="20" x2="20" y2="300" stroke="#C2D0DD" stroke-width="3"/>
-          <path d="M13 300 L20 314 L27 300 Z" fill="#C2D0DD"/>
-          <circle cx="20" cy="28" r="8" fill="#0E3B5C"/><text x="44" y="25" font-size="15" font-weight="700" fill="#0E3B5C">ДЕНЬ 1</text><text x="44" y="45" font-size="15" fill="#1E2A36">доступы, компания</text>
-<circle cx="20" cy="92" r="8" fill="#0E3B5C"/><text x="44" y="89" font-size="15" font-weight="700" fill="#0E3B5C">2 НЕДЕЛИ</text><text x="44" y="109" font-size="15" fill="#1E2A36">адаптация, первый тест</text>
-<circle cx="20" cy="156" r="8" fill="#0E3B5C"/><text x="44" y="153" font-size="15" font-weight="700" fill="#0E3B5C">3 МЕСЯЦА</text><text x="44" y="173" font-size="15" fill="#1E2A36">стажировка, аттестация</text>
-<circle cx="20" cy="220" r="8" fill="#0E3B5C"/><text x="44" y="217" font-size="15" font-weight="700" fill="#0E3B5C">1 ГОД</text><text x="44" y="237" font-size="15" fill="#1E2A36">продажи, переаттестация</text>
-<circle cx="20" cy="284" r="8" fill="#2E86C1"/><text x="44" y="281" font-size="15" font-weight="700" fill="#2E86C1">РОСТ</text><text x="44" y="301" font-size="15" fill="#1E2A36">курс руководителя</text>
-
-          <rect x="1" y="332" width="318" height="44" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
-          <text x="160" y="353" font-size="13" fill="#0E3B5C" text-anchor="middle">параллельно: продуктовые курсы</text>
-          <text x="160" y="369" font-size="13" fill="#0E3B5C" text-anchor="middle">по нужным группам</text>
-          <rect x="1" y="386" width="318" height="44" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
-          <text x="160" y="407" font-size="13" fill="#0E3B5C" text-anchor="middle">всегда под рукой:</text>
-          <text x="160" y="423" font-size="13" fill="#0E3B5C" text-anchor="middle">база знаний и ИИ-помощник</text>
-        </g>
-      </svg>
-      <svg class="desk-only" viewBox="0 0 1000 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Путь сотрудника: день 1, две недели, три месяца, год, рост до руководителя; параллельно продуктовые курсы, база знаний и ИИ-помощник">
-        <g font-family="Golos Text, sans-serif" text-anchor="middle" font-size="15">
-          <line x1="40" y1="56" x2="960" y2="56" stroke="#C2D0DD" stroke-width="3"/>
-          <path d="M960 49 L976 56 L960 63 Z" fill="#C2D0DD"/>
-          <circle cx="100" cy="56" r="9" fill="#0E3B5C"/><text x="100" y="30" font-weight="700" fill="#0E3B5C">ДЕНЬ 1</text><text x="100" y="90" fill="#1E2A36">доступы, компания</text>
-          <circle cx="300" cy="56" r="9" fill="#0E3B5C"/><text x="300" y="30" font-weight="700" fill="#0E3B5C">2 НЕДЕЛИ</text><text x="300" y="90" fill="#1E2A36">адаптация, первый тест</text>
-          <circle cx="500" cy="56" r="9" fill="#0E3B5C"/><text x="500" y="30" font-weight="700" fill="#0E3B5C">3 МЕСЯЦА</text><text x="500" y="90" fill="#1E2A36">стажировка, аттестация</text>
-          <circle cx="700" cy="56" r="9" fill="#0E3B5C"/><text x="700" y="30" font-weight="700" fill="#0E3B5C">1 ГОД</text><text x="700" y="90" fill="#1E2A36">продажи, переаттестация</text>
-          <circle cx="890" cy="56" r="9" fill="#2E86C1"/><text x="890" y="30" font-weight="700" fill="#2E86C1">РОСТ</text><text x="890" y="90" fill="#1E2A36">курс руководителя</text>
-          <rect x="20" y="118" width="470" height="44" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
-          <text x="255" y="146" fill="#0E3B5C">параллельно: продуктовые курсы по нужным группам</text>
-          <rect x="510" y="118" width="470" height="44" rx="8" fill="#EEF7FC" stroke="#D9E3EC"/>
-          <text x="745" y="146" fill="#0E3B5C">всегда под рукой: база знаний и ИИ-помощник</text>
-        </g>
-      </svg>
-    </div>
-    <div class="card wide">
-      <h3>Отчёт для руководителя</h3>
-      <p class="cap">Готова ли команда продавать и какие решения нужны. Данные в примере вымышлены.</p>
-      <div class="rep-grid">
-      <div class="kpis">
-        <div class="kpi"><b>8 из 11</b><span>готовы работать самостоятельно</span></div>
-        <div class="kpi"><b>52 → 86 %</b><span>знания до и после курсов</span></div>
-        <div class="kpi"><b>18 % / 11 %</b><span>звонок → встреча: прошли обучение / нет</span></div>
-      </div>
-      <div>
-      <div class="rep-sub">Где отдел ошибается</div>
-      <p class="cap" style="margin-bottom:8px">Сколько сотрудников из 11 ошибаются в тестах и тренажёрах по каждой теме.</p>
-      <div class="gaps">
-        <div class="gap"><span>Работа с возражениями</span><div class="bar"><i style="width:64%"></i></div><b>7 из 11</b></div>
-        <div class="gap"><span>Квалификация клиента</span><div class="bar"><i style="width:45%"></i></div><b>5 из 11</b></div>
-        <div class="gap"><span>Продукт: насосы</span><div class="bar"><i style="width:36%"></i></div><b>4 из 11</b></div>
-        <div class="gap"><span>Техника звонка</span><div class="bar"><i style="width:18%"></i></div><b>2 из 11</b></div>
-      </div>
-      </div>
-      <div>
-      <div class="rep-sub">Требует вашего решения</div>
-      <ul class="list">
-        <li>Олег С. продаёт насосы, но не сдал по ним курс: высокий риск ошибок в подборе. Назначить пересдачу до конца месяца.</li>
-        <li>Отдел проседает в работе с возражениями. Запустить тренажёр на две недели и сравнить конверсию.</li>
-      </ul>
-      </div>
-      </div>
-    </div>
-
   </div>
 </div></section>
 
@@ -702,22 +421,6 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
   <p>Самозанятость или договор ГПХ. Работаю удалённо. Подписываю NDA. Первый разговор — 30 минут, бесплатно.</p>
 </div></section>
 
-<script>
-const opts=[...document.querySelectorAll('.opt')], fb=document.getElementById('fb');
-let picked=null, checked=false;
-opts.forEach(o=>o.addEventListener('click',()=>{ if(checked) return; opts.forEach(x=>x.classList.remove('sel')); o.classList.add('sel'); picked=o; }));
-document.getElementById('check').addEventListener('click',()=>{
-  if(checked) return;
-  if(!picked){ fb.className='fb show'; fb.textContent='Сначала выберите вариант ответа.'; return; }
-  checked=true; const ok=picked.dataset.ok==='1';
-  picked.classList.remove('sel'); picked.classList.add(ok?'right':'wrong');
-  fb.className='fb show '+(ok?'right':'wrong');
-  fb.innerHTML='<b>'+(ok?'Верно. ':'Не совсем. ')+'</b>'+picked.dataset.fb;
-});
-document.getElementById('again').addEventListener('click',()=>{
-  checked=false; picked=null; opts.forEach(x=>x.className='opt'); fb.className='fb'; fb.textContent='';
-});
-</script>
 <button class="to-top" id="toTop" aria-label="Наверх"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
 <script>
 const toTop=document.getElementById('toTop');
